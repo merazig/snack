@@ -1,0 +1,56 @@
+{% extends 'food/base.html' %}
+
+{% block title %}Burgers{% endblock %}
+
+{% block content %}
+
+{% load cloudinary %}
+
+<div id="demo" class="carousel slide" data-ride="carousel" style="box-shadow: 0px 5px 10px">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://res.cloudinary.com/dxflxf2nv/image/upload/v1571150642/food/burg_ogtyfk.jpg" alt="slider1">
+        <div class="carousel-caption">
+          <h3 style="color: whitesmoke;">Majin Burgers</h3>
+          <p>Nos Burgers</p>
+        </div>   
+      </div>
+    </div>
+</div>
+<div class="container p-4">
+  <h2 class="text-center">~ Nos Burgers ~</h2>
+  <h4 class="text-center pb-2" style="color: rgb(43, 41, 41)">⊰ ∼∼.∼∼ ⊱</h4>
+
+  
+  <div class="row pt-4">
+      {% for burger in burgers %}
+    <div class="col-xs-12 col-sm-6 col-md-4" data-aos="zoom-in">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+            <div class="mainflip p-3">
+                <div class="frontside">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p><img class=" img-fluid" src='{{ burger.bimage.url }}' alt="card image"></p>
+                            <h4 class="card-title">{{ burger.nom }}</h4>
+                            <p class="card-text">{{ burger.descf }}</p>
+                            <h5>Seul: {{ burger.prixm }} €  Menu: {{ burger.prixl }} €</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="backside p-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{ burger.nom }}</h4>
+                            <p class="card-text">{{ burger.descb }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+  </div>
+  
+</div>
+
+{% endblock %}

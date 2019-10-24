@@ -1,0 +1,56 @@
+{% extends 'food/base.html' %}
+
+{% block title %}Pizzas{% endblock %}
+
+{% block content %}
+
+{% load cloudinary %}
+
+<div id="demo" class="carousel slide" data-ride="carousel" style="box-shadow: 0px 5px 10px">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://res.cloudinary.com/dxflxf2nv/image/upload/v1570464856/food/pizzas_fhsdkj.jpg" alt="slider1">
+        <div class="carousel-caption">
+          <h3 style="color: whitesmoke;">Majin Burgers</h3>
+          <p>Nos Pizzas</p>
+        </div>   
+      </div>
+    </div>
+</div>
+<div class="container p-4">
+  <h2 class="text-center">~ Nos Pizzas ~</h2>
+  <h4 class="text-center pb-2" style="color: rgb(43, 41, 41)">⊰ ∼∼.∼∼ ⊱</h4>
+
+  
+  <div class="row pt-4">
+      {% for pizza in pizzas %}
+    <div class="col-xs-12 col-sm-6 col-md-4" data-aos="zoom-in">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+            <div class="mainflip p-3">
+                <div class="frontside">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p><img class=" img-fluid" src='{{ pizza.pimage.url }}' alt="card image"></p>
+                            <h4 class="card-title">{{ pizza.nom }}</h4>
+                            <p class="card-text">{{ pizza.descf }}</p>
+                            <h5>M: {{ pizza.prixm }} €  L: {{ pizza.prixl }} €</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="backside p-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{ pizza.nom }}</h4>
+                            <p class="card-text">{{ pizza.descb }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+  </div>
+  
+</div>
+
+{% endblock %}

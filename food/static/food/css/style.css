@@ -1,0 +1,187 @@
+body {
+    font-family: Georgia, serif;
+}
+
+footer {
+    background-image: linear-gradient(45deg, rgb(5, 143, 74), rgb(3, 63, 40));
+    color: rgb(223, 228, 235);
+}
+
+.nav-item{
+	padding-right: 12px;
+    padding-left: 12px;
+}
+.nav-item:hover{
+    background-image: linear-gradient(to bottom right, rgba(252, 138, 138, 0.8), rgba(83, 18, 18, 0.8));
+    border-radius: 20px;
+}
+
+.nav-item.active{
+	background-image: linear-gradient(to bottom right, rgba(210, 252, 212, 0.8), rgba(29, 83, 18, 0.8)) !important;
+    border-radius: 20px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+.carousel-caption{
+    top: 55%;
+    left: 18%;
+    background-image: linear-gradient(to bottom right, rgba(252, 138, 138, 0.6), rgba(83, 18, 18, 0.8));
+    border-radius: 50px;
+    height: 100px;
+    width: 300px;
+}
+
+.carousel-caption a {
+    color: rgb(247, 244, 250); 
+    text-decoration: none;
+}
+
+.carousel-caption a:hover {
+    color: rgb(247, 244, 250); 
+    text-decoration: none;
+}
+
+.carousel-caption:hover {
+    color: rgb(247, 244, 250); 
+    text-decoration-line: none;
+    background-image: linear-gradient(to bottom right, rgba(252, 138, 138, 0.8), rgba(209, 6, 6, 0.8));
+}
+
+@media (max-width: 720px) {
+
+.carousel-caption {
+  background-image: none;
+  color: whitesmoke;
+}
+.carousel-caption:hover {
+    color: rgb(247, 244, 250); 
+    text-decoration-line: none;
+    background-image: none;
+}
+}
+
+.navbar-brand {
+    background-image: linear-gradient(to bottom right, rgba(252, 138, 138, 0.8), rgba(83, 18, 18, 0.8));
+    width: 172px;
+    border-radius: 20px;
+}
+
+.carte h4 {
+    padding-top: 20px; 
+    padding-bottom: 10px
+}
+
+.carte .rounded {
+    background-image: linear-gradient(to bottom right, rgb(5, 143, 74, 0.9), rgb(3, 63, 40, 0.9));
+    border-radius: 20px !important;
+    box-shadow: 5px 5px 5px #888888;
+    color: whitesmoke;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.frontside .card {
+    background-image: linear-gradient(to bottom right, rgba(250, 255, 253, 0.4), rgba(184, 185, 184, 0.7));
+    border: none;
+    color: #302d2d;
+    border-radius: 10px;
+}
+
+.backside .card {
+    background-image: linear-gradient(to bottom right, rgb(5, 143, 74, 0.7), rgb(3, 63, 40, 0.9));
+    border: none;
+    color: #e6e4e4;
+    border-radius: 10px;
+}
+
+.backside .card .card-title {
+    color: #effaf7 !important;
+}
+
+.frontside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 200px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.voir:hover {opacity: 0.7;}

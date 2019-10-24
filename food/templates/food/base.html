@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load staticfiles %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'food/css/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'food/css/style.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'food/css/aos.css' %}" />
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar fixed-top  navbar-dark" id="mynav">
+      <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="https://img.icons8.com/cotton/32/000000/hamburger.png"> <span style="color: rgb(25, 248, 92)">
+              M</span>ajin <span style="color: rgb(24, 211, 80)">B</span>urgers
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link {% if active_tab == 'tab1' %} active{% endif %}" href="{% url 'index' %}">Acceuil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if active_tab == 'tab2' %} active{% endif %}" href="{% url 'food:pizza' %}">Pizza</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link {% if active_tab == 'tab3' %} active{% endif %}" href="{% url 'food:burgers' %}">Burgers</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Dessert</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link {% if active_tab == 'tab5' %} active{% endif %}" href="{% url 'food:contact' %}">Contact</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+    <div class="container-fluid" style="padding-bottom: 50px;">
+        <div class="row">
+          <div class="box">
+            {% block content %}{% endblock %}
+          </div>
+        </div>
+    </div>
+      
+    <footer style="padding-top:20px;">
+      <div class="container-fluid">
+           <div class="row" style="padding-left:50px; padding-top:20px; padding-bottom:10px;">
+
+                <div class="col-md-6 col-sm-6">
+                     <div class="footer-thumb"> 
+                          <h4 class="pb-2">Contact Info</h4>
+                          <p>Vous pouvez nous contacter par téléphone ou par email:</p>
+
+                          <div class="contact-info">
+                               <p><img src="https://img.icons8.com/cute-clipart/26/000000/cell-phone.png">&nbsp 07-81-05-76-04</p>
+                               <p><img src="https://img.icons8.com/dusk/26/000000/email.png">&nbsp merazig.webdev@gmail.com</p>
+                               <p><img src="https://img.icons8.com/bubbles/26/000000/order-delivered.png"> 400 Cours Emile Zola<br>
+                                  &nbsp &nbsp &nbsp &nbsp 69100 Villeurbanne</p>
+                          </div>
+                     </div>
+                </div>
+
+    
+
+                <div class="col-md-6 col-sm-6"> 
+                     <div class="footer-thumb">
+                          <div class="opening-hours">
+                               <h4 class="pb-2">Horaires d'ouverture</h4>
+                               <p>Lundi - Vendredi: <span>08H00 - 20H00</span></p>
+                               <p>Samedi: <span>09H00 - 13H00</span></p>
+                               <p>Dimanche: <span>Fermé</span></p>
+                          </div> 
+
+                          <ul class="list-inline">
+                               <li class="list-inline-item"><a href="#"><img src="https://img.icons8.com/color/32/000000/facebook.png"></a></li>
+                               <li class="list-inline-item"><a href="#"><img src="https://img.icons8.com/color/32/000000/twitter-squared.png"></a></li>
+                               <li class="list-inline-item"><a href="#"><img src="https://img.icons8.com/color/32/000000/instagram-new.png"></a></li>
+                          </ul>
+                     </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 border-top">
+                            <div class="text-center"> 
+                                 <p class="text-center pt-4">Copyright &copy; 2019 The Majin Dev 
+                                 
+                                 | Design: merazig</a></p>
+                            </div>
+                  </div>
+                
+           </div>
+      </div>
+ </footer>
+    <script src="{% static 'food/js/aos.js' %}"></script>
+
+    <!-- jQuery -->
+    <script src="{% static 'food/js/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'food/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'food/js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'food/js/main.js' %}"></script>
+    </body>
+</html>
